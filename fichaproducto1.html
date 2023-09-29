@@ -1,0 +1,94 @@
+<html>
+
+<head>
+    <title>fichaproducto</title>
+    <link rel="stylesheet" href="estilos/estilos.css">
+</head>
+
+<body>
+    <header id="headerfichaproducto">
+        <h1>Tienda online de productos</h1>
+    </header>
+    <nav id="navfichaproducto">
+        <div class="organizacion_botones"> <a class="button" href="index.html">
+                <b>Volver al inicio</b></a> </div>
+        <div class="organizacion_botones"><a class="button" href="listado_box.html">
+                <b>Productos en box</b></a></div>
+    </nav>
+    <main>
+        <div class="fichaproducto">
+            <img src="imagenes/remera.png" alt="remera">
+            <div class="informacionproducto">
+                <h1 class="nombreproducto">Remera Calvin Klein azul</h1>
+                <h4 style="
+                border-left: 5px solid #FF5722;
+                padding: 3">Ver la descripcion para mas detalles</h4>
+                <p class="precio">$100</p>
+                <p><b>Talle</b></p>
+                <select id="talle">
+                    <option value="S">S</option>
+                    <option value="M">M</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
+                </select>
+                <h3>Cantidad: <span id="quantity">1</span></h3>
+                <button class="button" onclick="increaseQuantity()">+</button>
+                <button class="button" onclick="decreaseQuantity()">- </button>
+                <button class="button"><a
+                        href="formulario.html">Completar datos de compra</a></button>
+                <p id="message"></p>
+
+                <script>
+                    function increaseQuantity() {
+                        var quantityElement = document.getElementById("quantity");
+                        var quantity = parseInt(quantityElement.textContent);
+                        if (quantity < 5) {
+                            quantityElement.textContent = quantity + 1;
+                            document.getElementById("message").textContent = "";
+                        } else {
+                            document.getElementById("message").textContent = "Alcanzaste el limite de unidades.";
+                        }
+                    }
+
+                    function decreaseQuantity() {
+                        var quantityElement = document.getElementById("quantity");
+                        var quantity = parseInt(quantityElement.textContent);
+                        if (quantity > 1) {
+                            quantityElement.textContent = quantity - 1;
+                            document.getElementById("message").textContent = "";
+                        } else {
+                            document.getElementById("message").textContent = "No se pueden comprar menos de 1 unidad.";
+                        }
+                    }
+                </script>
+            </div>
+            <div class="descripcionproducto">
+                <h4> <b>Características Principales de Nuestra linea Premium:</b> </h4>
+                Confeccionamos con
+                telas de primera calidad, Algodón 100% jersey 24/1 de textura suave y liviana.Toda la prenda se arma
+                en Overlock de 4 hilos reforzando costuras de seguridad.Cuello de Reeb fino al tono (Sin
+                TapaCostura).Tirillera de hombro a hombro con hilos de Algodón.
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="contenedorfooter">
+            <div class="direccionfooter">
+                <p>Dirección: 21 Revolution Street, Posadas, Argentina</p>
+                <p>Teléfono: +1 555 123456</p>
+                <p>Correo electrónico: support@company.com</p>
+            </div>
+            <div class="socialmedia">
+                <a href="#">Facebook</a>
+                <a href="#">Twitter</a>
+                <a href="#">LinkedIn</a>
+                <a href="#">Instagram</a>
+            </div>
+            <div class="descripcionfooter">
+                <p>Copyright @ 2023. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

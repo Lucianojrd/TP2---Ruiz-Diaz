@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Formulario de compra</title>
+  <link rel="stylesheet" href="estilos/estilos.css">
+</head>
+
+<body>
+  <header id="headerformulario">
+    <h1>Formulario de compra</h1>
+  </header>
+  <nav id="navformulario">
+    <div class="organizacion_botones">
+      <a class="button" href="index.html"> <b>Volver al inicio</b></a>
+    </div>
+    <div class="organizacion_botones">
+      <a class="button" href="fichaproducto1.html"> <b>Volver al producto</b></a>
+    </div>
+  </nav>
+  <form method="post" action="#">
+    <label for="nombre">Nombre:</label><br>
+    <input type="text" id="nombre" name="nombre" required><br>
+    <label for="apellido">Apellido:</label><br>
+    <input type="text" id="apellido" name="apellido" required><br>
+    <label for="email">Email:</label><br>
+    <input type="email" id="email" name="email" required><br>
+    <label for="direccion">Dirección:</label><br>
+    <input type="text" id="direccion" name="direccion" required><br>
+    <label for="producto">Producto:</label><br>
+    <select id="producto" name="producto" required>
+      <option value="">--Seleccione un producto--</option>
+      <option value="producto1">Remera Calvin Klein</option>
+      <option value="producto2">Zapatillas Converse</option>
+    </select><br>
+    <label for="medio_pago" >Medio de pago:</label><br>
+    <select id="medio_pago" name="medio_pago" required>
+      <option value="">--Seleccione un medio de pago--</option>
+      <option value="tarjeta_credito">Tarjeta de crédito</option>
+      <option value="mercadopago">MercadoPago</option>
+    </select><br>
+    <div id="tarjeta_credito_info" style="display: none;">
+      <label for="tarjeta_credito_numero">Número de tarjeta:</label><br>
+      <input type="text" id="tarjeta_credito_numero" name="tarjeta_credito_numero" required><br>
+    </div>
+    <div id='mercadopago_info' style='display: none;'>
+      CVU : 00000004353053063
+    </div>
+    <script type='text/javascript'>
+      document.getElementById('medio_pago').addEventListener('change', function () {
+        var tarjetaCreditoInfo = document.getElementById('tarjeta_credito_info');
+        var mercadopagoInfo = document.getElementById('mercadopago_info');
+        if (this.value === 'tarjeta_credito') {
+          tarjetaCreditoInfo.style.display = 'block';
+          mercadopagoInfo.style.display = 'none';
+        } else if (this.value === 'mercadopago') {
+          tarjetaCreditoInfo.style.display = 'none';
+          mercadopagoInfo.style.display = 'block';
+        } else {
+          tarjetaCreditoInfo.style.display = 'none';
+          mercadopagoInfo.style.display = 'none';
+        }
+      });
+    </script>
+    <input type='submit' value='Comprar'>
+  </form>
+  <footer>
+    <div class="contenedorfooter">
+      <div class="direccionfooter">
+        <p>Dirección: 21 Revolution Street, Posadas, Argentina</p>
+        <p>Teléfono: +1 555 123456</p>
+        <p>Correo electrónico: support@company.com</p>
+      </div>
+      <div class="socialmedia">
+        <a href="#">Facebook</a>
+        <a href="#">Twitter</a>
+        <a href="#">LinkedIn</a>
+        <a href="#">Instagram</a>
+      </div>
+      <div class="descripcionfooter">
+        <p>Copyright @ 2023. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

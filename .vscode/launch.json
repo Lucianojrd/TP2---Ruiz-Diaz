@@ -1,0 +1,60 @@
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+
+void circulo() {
+    float radio, perimetro, area;
+    cout << "Escriba el radio del círculo: ";
+    cin >> radio;
+    area = M_PI * radio * radio;
+    perimetro = 2 * M_PI * radio;
+    cout << "El radio del círculo es " << radio << endl;
+    cout << "El área es " << area << endl;
+    cout << "El perímetro es " << perimetro << endl;
+}
+
+void pentagono() {
+    float lado, perimetro, area;
+    cout << "Escriba el lado del pentágono: ";
+    cin >> lado;
+    area = (5 * lado * lado) / (4 * tan(M_PI/5));
+    perimetro = 5 * lado;
+    cout << "El lado del pentágono es " << lado << endl;
+    cout << "El área es " << area << endl;
+    cout << "El perímetro es " << perimetro << endl;
+}
+
+void Rectangulo() {
+    float base, altura, area;
+    cout << "Ingrese la base y altura de su rectángulo: ";
+    cin >> base >> altura;
+    area = base * altura;
+    cout << "El área de su rectángulo es " << area << endl;
+}
+
+int main() {
+    int opcion;
+    while (opcion != 4) {
+        cout << "Ingrese una opción:" << endl;
+        cout << "Opción 1: Calcular el área y perímetro del círculo" << endl;
+        cout << "Opción 2: Calcular el área y perímetro del pentágono" << endl;
+        cout << "Opción 3: Calcular el área del rectángulo" << endl;
+        cout << "Opción 4: Salir" << endl;
+        cin >> opcion;
+        switch (opcion) {
+            case 1:
+                circulo();
+                break;
+            case 2:
+                pentagono();
+                break;
+            case 3:
+                Rectangulo();
+                break;
+            default:
+                cout << "Opción inválida" << endl;
+                break;
+        }
+    }
+    return
